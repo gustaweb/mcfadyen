@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="scroll-top" template="Magento_Theme::html/scrollTop.phtml" />
+        </referenceContainer>
+
+        <referenceBlock name="top.links">
+            <referenceBlock name="header" remove="true"/> 
+            <referenceBlock name="register-link" remove="true" /> 
+            <referenceBlock name="wish-list-link" remove="true" />
+            <referenceBlock name="authorization-link" remove="true" />
+        </referenceBlock>
+
+        <move element="minicart" destination="header-wrapper" after="top.search" />
+        <move element="header.panel" destination="header-wrapper" after="top.search" />
+        <move element="navigation.sections" destination="header-wrapper" after="logo" />    
+    </body>
+</page>

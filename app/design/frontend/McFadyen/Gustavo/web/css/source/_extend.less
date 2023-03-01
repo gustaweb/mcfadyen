@@ -1,3 +1,40 @@
+@color__black: #000000;
+
 .page-wrapper, body {
   font-family: 'Roboto';
+}
+
+.block-search {
+  width: 45px;
+  height: 30px;
+  padding: 0;
+
+  input {
+    border: 1px solid @color-white;
+    visibility: hidden;
+
+    &:focus {
+      box-shadow: unset;
+      border: 1px solid @color__black;
+      border-radius: 100px;
+    }
+  }
+
+  .action {
+    &.search[disabled], &.search {
+      opacity: 1;
+
+      &:before {
+        content: url('@{baseDir}images/icons/Search.svg');
+        position: relative;
+        top: 4px;
+        height: 24px;
+        font-size: 0;
+      }
+    }
+  }
+
+  .control {
+    display: none;
+  }
 }
