@@ -6,13 +6,15 @@ Composer - 1
 
 https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html
 
-To test it is necessary to use the sample data, for install sample data use the command line: bin/magento sampledata:deploy
+To test it is necessary to use the sample data, so after install magento environment, please run bin/magento sampledata:deploy.
 
 To test the changes, please import the database below
 
 [bckmcfadyen.zip](https://github.com/gustaweb/mcfadyen/files/10856406/bckmcfadyen.zip)
 
 Or, if you want, you can install a database from scratch, but the configuration of the attribute to display the product image will not be configured.
+
+https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/composer.html?lang=en
 
 Example image from localhost:
 
