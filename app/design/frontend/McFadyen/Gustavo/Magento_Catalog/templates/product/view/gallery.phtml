@@ -28,25 +28,21 @@ $mainImageData = $mainImage ?
 
 ?>
 
-<div class="gallery-placeholder _block-content-loading" data-gallery-role="gallery-placeholder">
-    <img
-        alt="main product photo"
-        class="gallery-placeholder__image"
-        src="<?= /* @noEscape */ $mainImageData ?>"
-    />
+<div class="gallery-slider">
+    <?php
+        $galleryImages = json_decode($block->getGalleryImagesJson(), true);
+        if (!empty($galleryImages)) {
+            foreach ($galleryImages as $image) {
+                echo '<img src="' . $image['img'] . '" alt="' . $image['caption'] . '">';
+            }
+        }
+    ?>   
 </div>
 
 <script type="text/x-magento-init">
-    {
-        "[data-gallery-role=gallery-placeholder]": {
-            "mage/gallery/gallery": {
-                "mixins":["magnifier/magnify"],
-                "magnifierOpts": <?= /* @noEscape */ $block->getMagnifier() ?>,
-                "data": <?= /* @noEscape */ $block->getGalleryImagesJson() ?>,
-                "options": <?= /* @noEscape */ $block->getGalleryOptions()->getOptionsJson() ?>,
-                "fullscreen": <?= /* @noEscape */ $block->getGalleryOptions()->getFSOptionsJson() ?>,
-                 "breakpoints": <?= /* @noEscape */ $block->getBreakpoints() ?>
-            }
-        }
-    }
+{
+   "*": {
+       "gallerySlider": {}
+   }
+}
 </script>
